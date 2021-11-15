@@ -12,7 +12,7 @@ Solution contains UI- and API-tests. Both test types implemented under one code 
 
 ```bash
 # in order to run tests:
-docker-compose up
+docker-compose up --build
 
 # in order to obtain report (linux):
 docker cp printing-company-test-task-main_dev-node_1:/app/reports/cucumber_report.html .
