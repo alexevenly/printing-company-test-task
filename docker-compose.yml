@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  dev-node:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: ./docker-entrypoint.sh
+    environment:
+      - HUB_PORT_4444_TCP_ADDR=hub
+      - HUB_PORT_4444_TCP_PORT=4444
+    depends_on:
+      - "selenium"
+
+  selenium:
+    image: selenium/standalone-chrome

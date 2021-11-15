@@ -1,0 +1,1628 @@
+[
+  {
+    "description": "  As a developer I want to make sure todos CRUD operations through REST API works fine.",
+    "elements": [
+      {
+        "description": "",
+        "id": "todos-api-service;create-a-todo",
+        "keyword": "Scenario Outline",
+        "line": 5,
+        "name": "Create a todo",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "A todo {\"userId\":1,\"title\":\"Lorem ipsum dolor sit amet\",\"completed\":false}",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 587301
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I send POST request to /todos",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 696804216
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I get response code 201",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 404309
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I receive response {\"userId\":1,\"id\":201,\"title\":\"Lorem ipsum dolor sit amet\",\"completed\":false}",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 746169
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "todos-api-service;create-a-todo",
+        "keyword": "Scenario Outline",
+        "line": 5,
+        "name": "Create a todo",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "A todo {\"userId\":10,\"title\":\"consectetur adipiscing elit\",\"completed\":true}",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 48551
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I send POST request to /todos",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 510477308
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I get response code 201",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 102583
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I receive response {\"userId\":10,\"id\":202,\"title\":\"consectetur adipiscing elit\",\"completed\":true}",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:48"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 1691982,
+              "error_message": "AssertionError\n    + expected - actual\n\n     {\n       \"completed\": true\n    -  \"id\": 201\n    +  \"id\": 202\n       \"title\": \"consectetur adipiscing elit\"\n       \"userId\": 10\n     }\n\n    at CustomWorld.<anonymous> (/app/code/steps/todos-rest-api.steps.js:49:12)"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "todos-api-service;get-todo",
+        "keyword": "Scenario Outline",
+        "line": 17,
+        "name": "Get todo",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "The todo with id 10 exist",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 93836
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "I send GET request to /todos",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 343922416
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "I get response code 200",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 95619
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "I receive response {\"userId\":1,\"id\":10,\"title\":\"illo est ratione doloremque quia maiores aut\",\"completed\":true}",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 165780
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "todos-api-service;get-todo",
+        "keyword": "Scenario Outline",
+        "line": 17,
+        "name": "Get todo",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "The todo with id 200 exist",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 53130
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "I send GET request to /todos",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 341461513
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "I get response code 200",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 105376
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "I receive response {\"userId\":10,\"id\":200,\"title\":\"ipsam aperiam voluptates qui\",\"completed\":false}",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 134702
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "todos-api-service;modify-todo-with-patch",
+        "keyword": "Scenario Outline",
+        "line": 29,
+        "name": "Modify todo with PATCH",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 30,
+            "name": "The todo with id 1 exist",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 51116
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 31,
+            "name": "I send PATCH request with a {\"completed\":true} to /todos",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 528528648
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 32,
+            "name": "I get response code 200",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 166352
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 33,
+            "name": "I receive as part of response {\"completed\":true}",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1135019
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "todos-api-service;modify-todo-with-patch",
+        "keyword": "Scenario Outline",
+        "line": 29,
+        "name": "Modify todo with PATCH",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 30,
+            "name": "The todo with id 98 exist",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 56285
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 31,
+            "name": "I send PATCH request with a {\"completed\":false} to /todos",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 531759079.00000006
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 32,
+            "name": "I get response code 200",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 130584
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 33,
+            "name": "I receive as part of response {\"completed\":false}",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 274393
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "todos-api-service;modify-todo-with-put",
+        "keyword": "Scenario Outline",
+        "line": 41,
+        "name": "Modify todo with PUT",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "The todo with id 1 exist",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 52478
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "I send PUT request with a {\"userId\":1,\"id\":1,\"title\":\"delectus aut autem\",\"completed\":true} to /todos",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 542412066
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "I get response code 200",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 91731
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 45,
+            "name": "I receive as part of response {\"completed\":true}",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 212358
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "todos-api-service;modify-todo-with-put",
+        "keyword": "Scenario Outline",
+        "line": 41,
+        "name": "Modify todo with PUT",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "The todo with id 98 exist",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 51196
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "I send PUT request with a {\"userId\":5,\"id\":98,\"title\":\"debitis accusantium ut quo facilis nihil quis sapiente necessitatibus\",\"completed\":false} to /todos",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 568905733
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "I get response code 200",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 107722
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 45,
+            "name": "I receive as part of response {\"completed\":false}",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 186009
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "todos-api-service;delete-todo",
+        "keyword": "Scenario",
+        "line": 53,
+        "name": "Delete todo",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 54,
+            "name": "The todo with id 201 exist",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 49743
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 55,
+            "name": "I send DELETE request to /todos",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 538184399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 56,
+            "name": "I get response code 200",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 86623
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "todos-api-service;filtering-by-completed-and-userid-fields",
+        "keyword": "Scenario Outline",
+        "line": 58,
+        "name": "Filtering by completed and userId fields",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 59,
+            "name": "The todo with id 164 exist",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 56997
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 60,
+            "name": "I send parameterized GET request to /todos with params ?userId=9&completed=false",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 327828576
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 61,
+            "name": "I get response code 200",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 88677
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 62,
+            "name": "I receive as part of response {\"userId\":9,\"id\":164,\"title\":\"reprehenderit quos aut aut consequatur est sed\",\"completed\":false}",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 307726
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "todos-api-service;filtering-by-completed-and-userid-fields",
+        "keyword": "Scenario Outline",
+        "line": 58,
+        "name": "Filtering by completed and userId fields",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 59,
+            "name": "The todo with id 85 exist",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 49692
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 60,
+            "name": "I send parameterized GET request to /todos with params ?userId=5&completed=true",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 384086660
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 61,
+            "name": "I get response code 200",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 87763
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 62,
+            "name": "I receive as part of response {\"userId\":5,\"id\":85,\"title\":\"et quia ad iste a\",\"completed\":true}",
+            "match": {
+              "location": "code/steps/todos-rest-api.steps.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 313368
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "todos-api-service",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "TODOs API Service",
+    "tags": [],
+    "uri": "features/todos-rest-api.feature"
+  },
+  {
+    "description": "  As a user I want to be able to add, edit, mark as completed and remove todos from the list.",
+    "elements": [
+      {
+        "description": "",
+        "id": "todos-web-app;adding-new-todo",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Adding new todo",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "I am on the TODOs app main page",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1359699501
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I provide \"some text\" into input field",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 54985798
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click ENTER key",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 43042631
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I see the todo in list with title \"some text\"",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 38217491
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1143035489
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@web",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "todos-web-app;adding-two-todos-with-the-same-text",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "Adding two todos with the same text",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 12,
+            "name": "I am on the TODOs app main page",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 209057698
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "I provide \"some text\" into input field",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 45242104
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I click ENTER key",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 28641662
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "I provide \"some text\" into input field",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 39987911
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "I click ENTER key",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 26260278
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "I see the todo in list with title \"some text\"",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 30290465
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "I can see there is 2 todos in list",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:65"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12643201
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 131227038
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@web",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "todos-web-app;adding-new-todo-with-long-text",
+        "keyword": "Scenario",
+        "line": 21,
+        "name": "Adding new todo with long text",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 22,
+            "name": "I am on the TODOs app main page",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 184446483
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 23,
+            "name": "I provide \"long text\" into input field",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 287675034
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 24,
+            "name": "I click ENTER key",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 21210618
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 25,
+            "name": "I see the todo in list with title \"long text\"",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 33775180
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1094970952
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@web",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "todos-web-app;editing-todo",
+        "keyword": "Scenario",
+        "line": 27,
+        "name": "Editing todo",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 28,
+            "name": "I am on the TODOs app main page",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 170606107
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "At least 1 todos exists",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 61532354
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 30,
+            "name": "I double click on todo and clear text",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:34"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 130257849.99999999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 31,
+            "name": "I provide \"edited text\" into todo",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 41670066
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 32,
+            "name": "I click ENTER key",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15610575
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 33,
+            "name": "I see the todo in list with title \"edited text\"",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 20049199
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1088370965
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@web",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "todos-web-app;deleting-todo",
+        "keyword": "Scenario",
+        "line": 35,
+        "name": "Deleting todo",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 36,
+            "name": "I am on the TODOs app main page",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 187932429
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 37,
+            "name": "At least 2 todos exists",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 112695945
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 38,
+            "name": "I delete todo",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 344022015
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 39,
+            "name": "I can see there is less than 2 todos in list",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:60"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9292075
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 99435747
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@web",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "todos-web-app;marking-todo-as-completed",
+        "keyword": "Scenario",
+        "line": 41,
+        "name": "Marking todo as completed",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "I am on the TODOs app main page",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 180212623
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 43,
+            "name": "At least 1 todos exists",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 71669454
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 44,
+            "name": "I mark todo as completed",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:46"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 41894697
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 45,
+            "name": "I can see todo marked completed in list",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:70"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11367017
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 73517121
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@web",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "todos-web-app;switching-view-to-completed",
+        "keyword": "Scenario",
+        "line": 47,
+        "name": "Switching view to Completed",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 48,
+            "name": "I am on the TODOs app main page",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 179711533
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 49,
+            "name": "At least 2 todos exists",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 108852007
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 50,
+            "name": "I mark todo as completed",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:46"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 36029748
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 51,
+            "name": "I switch view to \"Completed\"",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:50"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 38830821
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 52,
+            "name": "I can see todo marked completed in list",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:70"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8506332
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 53,
+            "name": "I can see there is less than 2 todos in list",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:60"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7394407
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 97347261
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@web",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "todos-web-app;switching-view-to-active-and-back-to-all",
+        "keyword": "Scenario",
+        "line": 56,
+        "name": "Switching view to Active and back to all",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 57,
+            "name": "I am on the TODOs app main page",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 173510714
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 58,
+            "name": "At least 2 todos exists",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 106259214
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 59,
+            "name": "I mark todo as completed",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:46"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 34583556
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 60,
+            "name": "I switch view to \"Active\"",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:50"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 33795669
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 61,
+            "name": "I can see there is less than 2 todos in list",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:60"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7552854
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 62,
+            "name": "I see the todo in list with title \"This is prepared todo2\"",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 21122704
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 63,
+            "name": "I switch view to \"All\"",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:50"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 31435761
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 64,
+            "name": "I can see there is 2 todos in list",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:65"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7097319
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 98186985
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@web",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "todos-web-app;checking-\"items-left\"-counter",
+        "keyword": "Scenario",
+        "line": 66,
+        "name": "Checking \"items left\" counter",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 67,
+            "name": "I am on the TODOs app main page",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 175629397
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 68,
+            "name": "At least 2 todos exists",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 108505426
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 69,
+            "name": "I can see \"2 items left\" text in todos counter",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:75"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 22707094
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 70,
+            "name": "I provide \"some text\" into input field",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 28268142
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 71,
+            "name": "I click ENTER key",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 14558883
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 72,
+            "name": "I can see \"3 items left\" text in todos counter",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:75"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 14041031
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 73,
+            "name": "I delete todo",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 352602837
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 74,
+            "name": "I delete todo",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 344876487
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 75,
+            "name": "I can see \"1 item left\" text in todos counter",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:75"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17019026
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 76,
+            "name": "I mark todo as completed",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:46"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 35754783
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 77,
+            "name": "I can see \"0 items left\" text in todos counter",
+            "match": {
+              "location": "code/steps/todos-web-app.steps.js:75"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15165640
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 72781431
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@web",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "todos-web-app",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "TODOs web app",
+    "tags": [
+      {
+        "name": "@web",
+        "line": 1
+      }
+    ],
+    "uri": "features/todos-web-app.feature"
+  }
+]

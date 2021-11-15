@@ -1,0 +1,24 @@
+{
+  "author": "@alexevenly",
+  "name": "selenium-cucumber-js-ui-api",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexevenly/printing-company-test-task.git"
+  },
+  "version": "0.0.1",
+  "license": "ISC",
+  "scripts": {
+    "test": "cucumber-js --require code --format json:./reports/report.json --publish-quiet",
+    "report": "node index.js"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^8.0.0-rc.1",
+    "selenium-webdriver": "^4.0.0",
+    "chromedriver": "^95.0.0",
+    "axios": "^0.24.0",
+    "chai": "^4.3.4"
+  },
+  "devDependencies": {
+    "cucumber-html-reporter": "^5.5.0"
+  }
+}
