@@ -10,4 +10,8 @@ RUN cd $APP_DIR
 
 COPY . $APP_DIR
 
+RUN ["chmod", "+x", "/app/docker-entrypoint.sh"]
+
 WORKDIR $APP_DIR
+
+ENTRYPOINT ["sh", "/app/docker-entrypoint.sh"]

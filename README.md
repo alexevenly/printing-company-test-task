@@ -14,8 +14,11 @@ Solution contains UI- and API-tests. Both test types implemented under one code 
 # in order to run tests:
 docker-compose up
 
-# in order to obtain report:
-docker cp test-dev-node-1:/app/reports/cucumber_report.html .
+# in order to obtain report (linux):
+docker cp printing-company-test-task-main_dev-node_1:/app/reports/cucumber_report.html .
+
+# in order to obtain report (windows):
+docker cp printing-company-test-task-main-dev-node-1:/app/reports/cucumber_report.html .
 ```
 ## License
 [ISC](https://choosealicense.com/licenses/isc/)
